@@ -1,14 +1,18 @@
 import './App.css'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import Home from './pages/Home'
+import TouristPlace from './pages/TouristPlace'
+import Navbar from './components/Navbar'
+import FullContent from './pages/FullContent'
 function App() {
 
   return (
     <>
       <BrowserRouter basename='kovai' >
-          <Routes>
-            <Route path='/' element={<Home />} />
-          </Routes>
+        <Navbar />
+        <Routes>
+          <Route path='/' element={<TouristPlace />} />
+          <Route path='/touristPlace/:id' element={<FullContent />} />
+        </Routes>
       </BrowserRouter>
     </>
   )
